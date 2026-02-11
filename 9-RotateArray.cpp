@@ -2,9 +2,8 @@ class Solution {
 public:
     void rotate(vector<int>& nums, int k) {
         int n = nums.size();
-        while(k > n)
-            k -= n;
-        if(n == k)
+        k %= n;
+        if(k == 0)
             return;
             
         vector<int> temp(k);
